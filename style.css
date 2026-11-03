@@ -215,7 +215,7 @@ dialog::backdrop { background: #382333b3; }
   .logo { font-size: 29px; }
   nav { order: 3; width: 100%; justify-content: center; gap: 26px; font-size: 13px; padding-top: 5px; }
   .cart-label { display: none; }
-  .hero { min-height: 680px; min-height: max(680px, 82svh); align-items: flex-end; }
+  .hero { min-height: max(680px, 82svh); align-items: flex-end; }
   .hero-copy { padding: 100px 7% 80px; }
   .hero::after { background: linear-gradient(0deg, rgba(29, 20, 25, .94), rgba(29, 20, 25, .78) 48%, rgba(29, 20, 25, .08)); }
   h1 { font-size: clamp(33px, 9vw, 44px); }
