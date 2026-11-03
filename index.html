@@ -1,12 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STUDIO — afslappede favoritter og tidløst tøj til din hverdag.">
+  <title>STUDIO — Tøj til hverdagen</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-<h1>Ny Overskrift</h1>
-<p>Dette er en dum lille tekst der er dum</p>
+  <a class="skip-link" href="#produkter">Gå til produkter</a>
+  <div class="announcement">Lidt færre ting. Lidt bedre favoritter.</div>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="STUDIO forside">STUDIO<span>®</span></a>
+    <nav aria-label="Hovednavigation">
+      <a href="#produkter">Kollektionen</a>
+      <a href="#om-os">Om os</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="cart-toggle" id="cart-toggle" type="button" aria-label="Åbn kurv, 0 varer" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
+      <span class="cart-label">Kurv</span><span id="cart-count" class="cart-count">0</span>
+    </button>
+  </header>
 
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">DIN HVERDAG. DIN STIL.</p>
+        <h1 id="hero-title">Gode dage starter<br>med gode <em>favoritter.</em></h1>
+        <p>Tidløse snit, bløde materialer og plads til at være dig. Find de styles, du får lyst til at tage på igen og igen.</p>
+        <a class="button" href="#produkter">Find dine favoritter <span aria-hidden="true">↗</span></a>
+        <span class="hero-note">Enkle styles. Uendelige muligheder.</span>
+      </div>
+      <div class="hero-image">
+        <!-- Midlertidige billeder: Udskift src her og på produktbillederne med egne billed-URL'er. -->
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Veninder på shopping i byen" fetchpriority="high">
+        <div class="image-caption"><span>THE EVERYDAY EDIT</span><span>01 / 06</span></div>
+      </div>
+    </section>
+
+    <section class="products-section" id="produkter" aria-labelledby="products-title">
+      <div class="section-heading"><div><p class="eyebrow">UDVALGT TIL DIN GARDEROBE</p><h2 id="products-title">Dine nye hverdagsfavoritter</h2></div><p>Enkelt at style. Nemt at elske.</p></div>
+      <div class="product-toolbar">
+        <div class="filters" role="group" aria-label="Filtrér produkter efter kategori">
+          <button class="filter active" type="button" data-filter="alle" aria-pressed="true">Alle</button>
+          <button class="filter" type="button" data-filter="overdele" aria-pressed="false">Overdele</button>
+          <button class="filter" type="button" data-filter="underdele" aria-pressed="false">Underdele</button>
+        </div>
+        <span id="product-count" aria-live="polite">6 styles</span>
+      </div>
+      <div class="product-grid">
+        <article class="product" data-category="overdele" data-id="tee" data-name="Essential T-shirt" data-price="249">
+          <div class="product-image"><span class="badge">Hverdagsfavorit</span><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Hvid T-shirt med rund hals" loading="lazy" width="700" height="875"></div>
+          <div class="product-info"><h3>Essential T-shirt</h3><span>249 kr.</span></div><p class="product-detail">Hvid · Regular fit</p><button class="add-to-cart" type="button">Læg i kurv <span aria-hidden="true">+</span></button>
+        </article>
+        <article class="product" data-category="overdele" data-id="strik" data-name="Soft Knit" data-price="599">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Lys striktrøje med blød struktur" loading="lazy" width="700" height="875"></div>
+          <div class="product-info"><h3>Soft Knit</h3><span>599 kr.</span></div><p class="product-detail">Sand · Afslappet pasform</p><button class="add-to-cart" type="button">Læg i kurv <span aria-hidden="true">+</span></button>
+        </article>
+        <article class="product" data-category="underdele" data-id="jeans" data-name="Everyday Jeans" data-price="699">
+          <div class="product-image"><span class="badge">Denim edit</span><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Blå jeans med klassiske denimdetaljer" loading="lazy" width="700" height="875"></div>
+          <div class="product-info"><h3>Everyday Jeans</h3><span>699 kr.</span></div><p class="product-detail">Blå denim · Straight fit</p><button class="add-to-cart" type="button">Læg i kurv <span aria-hidden="true">+</span></button>
+        </article>
+        <article class="product" data-category="overdele" data-id="skjorte" data-name="Oxford Skjorte" data-price="499">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Klassisk skjorte med knapper og krave" loading="lazy" width="700" height="875"></div>
+          <div class="product-info"><h3>Oxford Skjorte</h3><span>499 kr.</span></div><p class="product-detail">Lyseblå · Klassisk pasform</p><button class="add-to-cart" type="button">Læg i kurv <span aria-hidden="true">+</span></button>
+        </article>
+        <article class="product" data-category="underdele" data-id="bukser" data-name="Relaxed Chinos" data-price="549">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Casual bukser i et afslappet outfit" loading="lazy" width="700" height="875"></div>
+          <div class="product-info"><h3>Relaxed Chinos</h3><span>549 kr.</span></div><p class="product-detail">Khaki · Relaxed fit</p><button class="add-to-cart" type="button">Læg i kurv <span aria-hidden="true">+</span></button>
+        </article>
+        <article class="product" data-category="overdele" data-id="jakke" data-name="Denim Jakke" data-price="799">
+          <div class="product-image"><img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Blå denimjakke med lommer og knapper" loading="lazy" width="700" height="875"></div>
+          <div class="product-info"><h3>Denim Jakke</h3><span>799 kr.</span></div><p class="product-detail">Blå denim · Regular fit</p><button class="add-to-cart" type="button">Læg i kurv <span aria-hidden="true">+</span></button>
+        </article>
+      </div>
+    </section>
+    <section class="about" id="om-os"><p class="eyebrow">MINDRE STØJ. MERE DIG.</p><h2>Stil behøver ikke være kompliceret.</h2><p>Hos STUDIO tror vi på en garderobe, der passer til livet. Vi samler enkle styles, som du kan mikse på din egen måde — fra rolige morgener til aftener ude.</p><span class="about-mark" aria-hidden="true">S.</span></section>
+  </main>
+
+  <footer id="kontakt">
+    <div class="footer-main"><div><a class="logo" href="#">STUDIO<span>®</span></a><p>Til hverdagen. Til dig.</p></div><div><h2>Sig hej</h2><a href="mailto:hej@studio.example">hej@studio.example</a><p>Eksempelbutik · København</p></div><div><h2>Følg med</h2><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer">Pinterest ↗</a></div></div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> STUDIO</span><span>En lille demobutik med øje for detaljen.</span></div>
+  </footer>
+  <p class="toast" id="cart-status" role="status"></p>
+  <dialog id="cart-dialog" aria-labelledby="cart-title"><div class="cart-heading"><h2 id="cart-title">Din kurv</h2><button id="close-cart" type="button" aria-label="Luk kurv">×</button></div><ul id="cart-items"></ul><p class="cart-total">I alt <strong id="cart-total">0 kr.</strong></p><p class="demo-note">Dette er en demobutik. Der gennemføres ingen betaling.</p></dialog>
 </body>
 </html>
